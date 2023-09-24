@@ -1,0 +1,65 @@
+
+cp ml wandb agent dawon/ContrastiveLearning/o3i97wcg
+
+costco ml wandb agent dawon/ContrastiveLearning/z337jm22 
+
+costco yelp wandb agent dawon/ContrastiveLearning/9ydjd7d3
+
+wandb sweep --project ContrastiveLearning src/costco_lastfm.yaml
+
+
+wandb: Creating sweep from: configs/cp_yelp.yaml
+wandb: Created sweep with ID: r3k98l1z
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/r3k98l1z
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/r3k98l1z
+wandb: Creating sweep from: configs/cp_dblp.yaml
+wandb: Created sweep with ID: mgn50v3g
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/mgn50v3g
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/mgn50v3g
+wandb: Creating sweep from: configs/cp_lastfm.yaml
+wandb: Created sweep with ID: 0838fnbf
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/0838fnbf
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/0838fnbf
+wandb: Creating sweep from: configs/cp_SG.yaml
+wandb: Created sweep with ID: bql6twcr
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/bql6twcr
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/bql6twcr
+wandb: Creating sweep from: configs/cp_reddit.yaml
+wandb: Created sweep with ID: wi3tjtte
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/wi3tjtte
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/wi3tjtte
+wandb: Creating sweep from: configs/cp_foursquare_nyc.yaml
+wandb: Created sweep with ID: t3gq1x6y
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/t3gq1x6y
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/t3gq1x6y
+wandb: Creating sweep from: configs/cp_foursquare_tky.yaml
+wandb: Created sweep with ID: oh8771hy
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/oh8771hy
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/oh8771hy
+wandb: Creating sweep from: configs/cp_yahoo_msg.yaml
+
+wandb: Creating sweep from: configs/costco_lastfm.yaml
+wandb: Created sweep with ID: 2y0ol5sr
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/2y0ol5sr
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/2y0ol5sr
+wandb: Creating sweep from: configs/costco_dblp.yaml
+wandb: Created sweep with ID: ivc5vn1h
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/ivc5vn1h
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/ivc5vn1h
+wandb: Creating sweep from: configs/costco_SG.yaml
+wandb: Created sweep with ID: nw64nqhj
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/nw64nqhj
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/nw64nqhj
+wandb: Creating sweep from: configs/costco_reddit.yaml
+wandb: Created sweep with ID: emokzuwp
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/emokzuwp
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/emokzuwp
+wandb: Creating sweep from: configs/costco_foursquare_nyc.yaml
+wandb: Created sweep with ID: 4y13u5l7
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/4y13u5l7
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/4y13u5l7
+wandb: Creating sweep from: configs/costco_foursquare_tky.yaml
+wandb: Created sweep with ID: orj3m85h
+wandb: View sweep at: https://wandb.ai/dawon/ContrastiveLearning/sweeps/orj3m85h
+wandb: Run sweep agent with: wandb agent dawon/ContrastiveLearning/orj3m85h
+wandb: Creating sweep from: configs/costco_yahoo_msg.yam

@@ -1,0 +1,55 @@
+method: bayes
+metric:
+  goal: minimize
+  name: valid_rmse
+parameters:
+  aug:
+    distribution: categorical
+    values:
+    - zero
+  cl:
+    distribution: categorical
+    values:
+    - zero
+  dataset:
+    distribution: categorical
+    values:
+    - lastfm
+  device:
+    distribution: categorical
+    values:
+    - cuda:2
+  epochs:
+    values:
+    - 10000
+  lr:
+    values:
+    - 0.001
+    - 0.01
+  neg_sampling:
+    distribution: categorical
+    values:
+    - neg_sample0
+  rank:
+    values:
+    - 16
+    - 32
+    - 64
+    - 128
+  rpath:
+    distribution: categorical
+    values:
+    - /home/dahn017/research/ContrastiveClustering
+  tf:
+    distribution: categorical
+    values:
+    - cp
+  wd:
+    values:
+    - 0.0001
+    - 0.001
+    - 0.01
+    - 0.1
+    - 1
+    - 10
+program: main.py

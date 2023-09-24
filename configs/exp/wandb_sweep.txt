@@ -1,0 +1,30 @@
+
+# yelp
+wandb agent dawon/neat/voh5hxxh --count 128
+# foursquare_nyc
+wandb agent dawon/neat/2g4fr5sg --count 128
+# foursquare_tky
+wandb agent dawon/neat/bw6mjpgi --count 128
+
+# ml
+wandb agent dawon/neat/95b6g75t --count 128
+# reddit
+wandb agent dawon/neat/0wj6nwy1 --count 128
+# lastfm
+wandb agent dawon/neat/z5em8inh --count 128
+
+# dblp
+wandb agent dawon/neat/e3idhquy --count 128
+# SG
+wandb agent dawon/neat/7t546yiy --count 128
+# yahoo_msg
+wandb agent dawon/neat/8wechqq0 --count 128
+
+
+
+
+# reddit
+wandb agent dawon/neat/m4ci85t4
+
+# Lastfm
+wandb agent dawon/neat/l8mm4t6z

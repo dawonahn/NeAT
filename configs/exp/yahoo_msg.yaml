@@ -1,0 +1,62 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_rmse
+parameters:
+  dataset:
+    value: yahoo_msg
+  rpath:
+    value: /home/dahn017/intern/cisco23/neat
+  device:
+    value: cuda:2
+  nn:
+    value: mlp
+  epochs:
+    value: 10000
+  dropout:
+    value: 0.0001
+  bs:
+    value: 2048
+  layer_dims:
+    values:
+      - 3, 1
+      - 3, 4, 1
+      - 3, 8, 1
+      - 3, 16, 1
+      - 3, 32, 1
+      - 3, 4, 4, 1
+      - 3, 4, 8, 1
+      - 3, 4, 16, 1
+      - 3, 4, 32, 1
+      - 3, 8, 4, 1
+      - 3, 8, 8, 1
+      - 3, 8, 16, 1
+      - 3, 8, 32, 1
+      - 3, 16, 16, 1
+      - 3, 16, 32, 1
+      - 3, 32, 32, 1
+  rank:
+    values:
+    - 8
+    - 16
+    - 24
+    - 32
+    - 40 
+    - 64
+  act:
+    values:
+    - relu
+    - leakyrelu
+    - elu
+    - gelu
+    - selu
+    - prelu
+    - rational
+  lr:
+    values:
+    - 0.001
+  wd:
+    values:
+    - 0.0001
+    - 1.0e-05
+program: src/main.py
