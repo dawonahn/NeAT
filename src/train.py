@@ -52,25 +52,26 @@ def train(tensor, cfg, wandb=None, verbose=True):
 
         model.eval()
         if (epoch+1) % 1 == 0:
-            val_rec = m(model(tensor.valid_i))
-            train_rmse = np.sqrt(epoch_loss/len(dataloader))
-            valid_rmse = rmse(val_rec, tensor.valid_v)
+            with torch.no_grad():
+                val_rec = m(model(tensor.valid_i))
+                train_rmse = np.sqrt(epoch_loss/len(dataloader))
+                valid_rmse = rmse(val_rec, tensor.valid_v)
 
-            if wandb:
-                wandb.log({"train_rmse":train_rmse,
-                           "valid_rmse":valid_rmse,
-                           "total_running_time":total_running_time})
+                if wandb:
+                    wandb.log({"train_rmse":train_rmse,
+                               "valid_rmse":valid_rmse,
+                               "total_running_time":total_running_time})
+                    
+                if verbose:
+                    print(f"Epochs {epoch} TrainRMSE: {train_rmse:.4f}\t"
+                            f"ValidRMSE: {valid_rmse:.4f}\t")
+
+                if (old_valid_rmse <= valid_rmse):
+                    flag +=1
+                old_valid_rmse = valid_rmse
                 
-            if verbose:
-                print(f"Epochs {epoch} TrainRMSE: {train_rmse:.4f}\t"
-                        f"ValidRMSE: {valid_rmse:.4f}\t")
-
-            if (old_valid_rmse <= valid_rmse):
-                flag +=1
-            old_valid_rmse = valid_rmse
-            
-            if flag == 5:
-                break
+                if flag == 5:
+                    break
 
     training_time = time.time() - start
     model.eval()
