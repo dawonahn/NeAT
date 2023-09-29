@@ -39,8 +39,6 @@ parameters:
   rank:
     values:
     - 8
-  rpath:
-    value: /data/dahn017/NeAT/bceloss
   wd:
     values:
     - 0.0001

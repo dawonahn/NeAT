@@ -11,7 +11,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     # Dataset
-    parser.add_argument('--rpath', type=str, default='/data/dahn017/neat')
+    parser.add_argument('--rpath', type=str, default='./datasets')
     parser.add_argument('--dataset', type=str, help='Dataset name')
 
     # Model
