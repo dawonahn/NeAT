@@ -29,7 +29,6 @@ def read_data(cfg, bin_val=True, neg=True):
     dct = DotMap()
     name = cfg.dataset
     device = cfg.device
-    datapath = '/data/dahn017/TENSOR'
     data_path = os.path.join(Path.home(), 'TENSOR', name)
 
     if name.startswith('epigenom'):
@@ -96,13 +95,8 @@ def get_size(name):
     if name == "yahoo_msg":
         size = [82309, 82308, 168]
 
-    if name == "epigenom":
-        size = [5, 5, 1000]
-
-    if name.endswith('dblp3'):
+    if name.endswith('dblp'):
         size = [4057, 14328, 7723]
 
-    if name.endswith('dblp4'):
-        size = [4057, 14328, 7723, 20]
 
     return size

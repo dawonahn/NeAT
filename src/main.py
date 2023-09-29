@@ -52,7 +52,6 @@ def main():
     run = wandb.init(
             project='NeAT',
             group=cfg.dataset,
-            tags = ['dropout'],
             job_type=str(cfg.rank),
             config = cfg,
     )
