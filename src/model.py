@@ -20,12 +20,9 @@ class MLP(nn.Module):
         for i in range(0, len(dims)-2):
             in_dim, out_dim = dims[i], dims[i+1]
 
-            if act == 'exu':
-                layers.append(ExU(in_dim, out_dim))
-            else:
-                layers.append(nn.Linear(in_dim, out_dim))
-                if ''!=act:
-                    layers.append(get_act(act))
+            layers.append(nn.Linear(in_dim, out_dim))
+            if ''!=act:
+                layers.append(get_act(act))
 
         # Last layers
         in_dim, out_dim = dims[-2], dims[-1]
