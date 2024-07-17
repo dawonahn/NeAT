@@ -14,9 +14,16 @@ class MLP(nn.Module):
         # First and hidden layers
         for i in range(0, len(dims)-2):
             in_dim, out_dim = dims[i], dims[i+1]
+<<<<<<< HEAD
             layers.append(nn.Linear(in_dim, out_dim))
             if ''!=act:
                 layers.append(getattr(nn, 'ReLU')())
+=======
+
+            layers.append(nn.Linear(in_dim, out_dim))
+            if ''!=act:
+                layers.append(get_act(act))
+>>>>>>> 2951588b2e131e443afec05727af21f85973da65
 
         # Last layers
         in_dim, out_dim = dims[-2], dims[-1]
