@@ -3,8 +3,7 @@ import torch
 
         
 def save_checkpoints(model, config):
-    '''Save a trained model.
-    '''
+    '''Save a trained model.'''
     data_config = os.path.join(config.dataset)
     model_config = f"{config.nn}_{config.rank}"
     out_path = os.path.join(config.rpath, "output", data_config, model_config)

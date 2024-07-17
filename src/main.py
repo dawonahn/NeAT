@@ -1,5 +1,5 @@
 import pdb
-import wandb
+# import wandb
 import argparse
 
 from dotmap import DotMap
@@ -16,9 +16,7 @@ def parse_args():
 
     # Model
     parser.add_argument('--tf', type=str, help='cp, neat', default='neat')
-    parser.add_argument('--lossf', type=str, help='MSELoss or BCELoss', default='MSELoss')
-    parser.add_argument('--nn', type=str, help='mlp, cnn, transformer')
-    parser.add_argument('--act', type=str, help='relu, exu, rational')
+    parser.add_argument('--lossf', type=str, help='MSELoss or BCELoss', default='BCELoss')
 
     # Hyper-params for tf
     parser.add_argument('--rank', type=int, help='Rank size of tf')
@@ -49,12 +47,12 @@ def main():
 
     cfg = parse_args()
 
-    run = wandb.init(
-            project='NeAT',
-            group=cfg.dataset,
-            job_type=str(cfg.rank),
-            config = cfg,
-    )
+    # run = wandb.init(
+    #         project='NeAT',
+    #         group=cfg.dataset,
+    #         job_type=str(cfg.rank),
+    #         config = cfg,
+    # )
 
     tensor = read_data(cfg)
     model = train(tensor, cfg, wandb)

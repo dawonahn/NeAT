@@ -22,7 +22,7 @@ class COODataset(Dataset):
 def read_data(cfg, bin_val=True, neg=True):
     ''' Read tensors in COO format.
         cfg: configuration file
-        bin_val: binary value 
+        bin_val: whether if tensor values are binary
         neg: include negatvie sampling
     '''
 
@@ -30,10 +30,6 @@ def read_data(cfg, bin_val=True, neg=True):
     name = cfg.dataset
     device = cfg.device
     data_path = os.path.join(Path.home(), 'TENSOR', name)
-
-    if name.startswith('epigenom'):
-        bin_val = False
-        neg = False
 
     for dtype in ['train', 'valid', 'test']:
         if cfg.verbose:
@@ -59,7 +55,6 @@ def read_data(cfg, bin_val=True, neg=True):
             neg_vals = np.zeros(neg_idxs.shape[0])
             idxs_lst.append(neg_idxs)
             vals_lst.append(neg_vals)
-
     
         total_idxs = np.vstack(idxs_lst)
         total_vals = np.hstack(vals_lst)

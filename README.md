@@ -1,19 +1,20 @@
 
 # Neural Additive Tensor Decomposition for Sparse Tensors
 This is a PyTorch implementation of "Neural Additive Tensor Decomposition for Sparse Tensors".
-This paper proposed a novel approach that discover non-linear latent patterns in multi-aspect data in an interpretable way.
+This paper proposed NeAT, a tensor decomposition methods discover non-linear latent patterns in tensors in an interpretable way.
 
 ## Prerequisites
-Before you begin using this code, make sure you have the following dependencies installed:
+Before you begin using this code, make sure you have the following libraries installed:
 - Python 3.9
 - PyTorch
 - NumPy
 - DotMap
+- TensorLy
+- torchmetrics
 
 
 ## Usage
-To run the demo script, simply execute the run.sh script, which in turn runs src/main.py. 
-The script is designed to work with different datasets, which are located in the dataset directory.
+To run the demo script, simply execute the `demo.sh` script or run the `demo.ipynb`
 
 ## Directory structure
 

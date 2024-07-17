@@ -1,36 +1,26 @@
 
+import copy
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-import copy
 from torch.func import functional_call
 from torch.func import stack_module_state
 
-from act import *
-
 
 class MLP(nn.Module):
-    """Simple class for non-linear fully connect network
-    """
     def __init__(self, dims, act='ReLU'):
         super(MLP, self).__init__()
         layers = []
-        # First and Hidden layers
+        # First and hidden layers
         for i in range(0, len(dims)-2):
             in_dim, out_dim = dims[i], dims[i+1]
-
-            if act == 'exu':
-                layers.append(ExU(in_dim, out_dim))
-            else:
-                layers.append(nn.Linear(in_dim, out_dim))
-                if ''!=act:
-                    layers.append(get_act(act))
+            layers.append(nn.Linear(in_dim, out_dim))
+            if ''!=act:
+                layers.append(getattr(nn, 'ReLU')())
 
         # Last layers
         in_dim, out_dim = dims[-2], dims[-1]
         layers.append(nn.Linear(in_dim, out_dim))
-
         self.layers = nn.Sequential(*layers)
 
     def forward(self, x):
@@ -55,19 +45,20 @@ class NeAT(nn.Module):
         # MLPs for each rank-1 tensor  
         self.dropout = nn.Dropout(p=cfg.dropout)
         self.dropout2 = nn.Dropout(p=cfg.dropout2)
+        # Simple one
         # self.mlps = nn.ModuleList([MLP(self.layer_dims, act=cfg.act)
                                 # for _ in range(self.rank)])
-
-        self.ready()
+        self.make_mlps()
         self._initialize()
 
     def _initialize(self):        
         for i in range(len(self.embeds)):
             nn.init.uniform_(self.embeds[i].weight.data)
 
-    def ready(self):
+    def make_mlps(self):
         '''
-        Speed up operation on neural networks.
+        Bath operation with mlp
+        Speed up operation on neural networks to avoid loops in forward propagation
         '''
         mlps = nn.ModuleList([MLP(self.layer_dims, act=self.cfg.act).to(self.cfg.device)
                                     for _ in range(self.rank)])

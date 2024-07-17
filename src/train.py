@@ -13,7 +13,7 @@ from metrics import *
 
 def train(tensor, cfg, wandb=None, verbose=True):
 
-    print("Start training a neuralized tensor decomposition...!")
+    print("Start training a neural additive tensor decomposition...!")
     # Prepare dataset
     dataset = COODataset(tensor.train_i, tensor.train_v)
     dataloader = DataLoader(dataset, batch_size=cfg.bs, shuffle=True)
