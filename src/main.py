@@ -23,12 +23,12 @@ def parse_args():
     parser.add_argument('--wd', type=float, help='Weight decay')
     parser.add_argument('--lr', type=float, help='Learning rate')
     parser.add_argument('--bs', type=int, help='Batch size')
-    parser.add_argument('--epochs', type=int, help='Iteration for training')
+    parser.add_argument('--epochs', type=int, help='Epochs for training')
     
     # Hyper-params for nn model
-    parser.add_argument('--layer_dims', type=str, help='Layer dims.')
-    parser.add_argument('--dropout', type=float, help='Dropout on rank-1 tensor')
-    parser.add_argument('--dropout2', type=float, help='Dropout in network')
+    parser.add_argument('--layer_dims', type=str, help='Layer dimensions')
+    parser.add_argument('--dropout', type=float, help='Dropout on rank-1 component')
+    parser.add_argument('--dropout2', type=float, help='Dropout inside network')
 
     # Etc
     parser.add_argument('--device', type=str, help='Device: cuda:0')

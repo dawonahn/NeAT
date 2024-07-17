@@ -46,7 +46,6 @@ def train(tensor, cfg, wandb=None, verbose=True):
             loss.backward()
             optimizer.step()
             epoch_loss += loss.item()
-
         epoch_end = time.time()
         total_running_time += (epoch_end - epoch_start)
 
